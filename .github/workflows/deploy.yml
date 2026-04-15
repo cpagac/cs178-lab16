@@ -25,9 +25,9 @@ jobs:
             python3 -m pip install -r requirements.txt --disable-pip-version-check --timeout 30
 
             # Stop any existing instance of the app on port 8888
-            pkill -f "python app.py" || true
+            fuser -k 8888/tcp || true
 
             # Start the app in the background, logging to app.log
-            nohup python app.py > app.log 2>&1 &
+            nohup python3 app.py > app.log 2>&1 &
 
             echo "Lab 16 deployed and running on port 8888"
