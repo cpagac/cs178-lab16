@@ -22,7 +22,7 @@ jobs:
           script: |
             cd ~/cs178-lab16
             git pull origin main
-            python3 -m pip install -r requirements.txt --break-system-packages --disable-pip-version-check --timeout 30
+            python3 -m pip install -r requirements.txt --disable-pip-version-check --timeout 30
 
             # Stop any existing instance of the app on port 8888
             pkill -f "python app.py" || true
